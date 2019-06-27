@@ -1,0 +1,28 @@
+import java.io.*;
+import java.math.*;
+import java.text.*;
+import java.util.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String args[]) throws IOException
+    {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] tmp = br.readLine().split(" ");
+        long n = Long.parseLong(tmp[0].trim());
+        long m = Long.parseLong(tmp[1].trim());
+        long sum =0 , res =0 ;
+
+        for(int i=0; i<m ;i++)
+        {
+            String[] operations = br.readLine().split(" ");
+            long a = Long.parseLong(operations[0].trim());
+            long b = Long.parseLong(operations[1].trim());
+            long k = Long.parseLong(operations[2].trim());
+
+            sum += (b-a+1)*k; 
+        }
+        res = sum/n ; 
+        System.out.println(res);
+    }
+}
